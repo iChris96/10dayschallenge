@@ -1,38 +1,34 @@
-// Day 1: Arithmetic Operators
+// Day 2: Loops
 
-/**
-*   Calculate the area of a rectangle.
-*
-*   length: The length of the rectangle.
-*   width: The width of the rectangle.
-*   
-*	Return a number denoting the rectangle's area.
-**/
-function getArea(length, width) {
-    let area;
-    // Write your code here
-    area = length * width;
-    return area;
+
+function vowelsAndConsonants(s) {
+    const word = s;
+
+    const vowels = 'aeiou'
+
+    const isVowel = (i) => {
+        let isVowel = false;
+
+        vowels.split('').forEach(v => {
+            if (v == i) {
+                isVowel = true
+            }
+        })
+
+        return isVowel;
+    }
+
+    let notVowels = []
+    let areVowels = []
+
+    word.split('').forEach(l => {
+
+        isVowel(l) ? areVowels.push(l) : notVowels.push(l)
+    })
+
+    const x = [...areVowels, ...notVowels].forEach(i => console.log(i, '\n'))
 }
 
-/**
-*   Calculate the perimeter of a rectangle.
-*	
-*	length: The length of the rectangle.
-*   width: The width of the rectangle.
-*   
-*	Return a number denoting the perimeter of a rectangle.
-**/
-function getPerimeter(length, width) {
-    let perimeter;
-    // Write your code here
-    perimeter = 2 * (length + width);
-    return perimeter;
-}
 
+vowelsAndConsonants('javascriptloops')
 
-const length = 3
-const width = 4.5
-
-console.log(getArea(length, width));
-console.log(getPerimeter(length, width));
