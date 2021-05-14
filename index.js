@@ -1,12 +1,7 @@
 // Day 2: Loops
 
-
-function vowelsAndConsonants(s) {
-    const word = s;
-
-    const vowels = 'aeiou'
-
-    const isVowel = (i) => {
+/* const isVowel = (i) => {
+        const vowels = 'aeiou'
         let isVowel = false;
 
         vowels.split('').forEach(v => {
@@ -16,17 +11,25 @@ function vowelsAndConsonants(s) {
         })
 
         return isVowel;
-    }
+} */
+
+const isVowel = (i) => {
+    const vowels = 'aeiou'.split('');
+    return vowels.includes(i) ? true : false
+}
+
+
+function vowelsAndConsonants(s) {
+    const word = s;
 
     let notVowels = []
     let areVowels = []
 
     word.split('').forEach(l => {
-
         isVowel(l) ? areVowels.push(l) : notVowels.push(l)
     })
 
-    const x = [...areVowels, ...notVowels].forEach(i => console.log(i, '\n'))
+    const x = [...areVowels, ...notVowels].forEach(i => console.log(i))
 }
 
 
