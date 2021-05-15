@@ -1,9 +1,13 @@
-// Day 1: Functions
+// Day 1: Let and Const
+const PI = 3.1416
 
-const factorial = (n) => {
-    if (n < 1) return 1
-    const acc = factorial(n - 1)
-    return n * acc
+const x = (r) => {
+    let area = PI * (Math.pow(r, 2))
+    let p = 2 * PI * r
+
+    console.log(area)
+    console.log(p)
+
 }
 
-console.log(factorial(4))
+x(2.6)
